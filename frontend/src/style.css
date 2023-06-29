@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import 'bootstrap/dist/css/bootstrap.css';
 
-:root {
+* {
   font-family: 'Nanum Myeongjo', 'Noto Serif', serif;
+}
+
+nav {
+  width: 20rem;
+}
+
+.nav-logo {
+  max-height: 3rem;
 }

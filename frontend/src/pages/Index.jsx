@@ -5,6 +5,7 @@ import NotFound from './NotFound.jsx'
 import Register from './Register.jsx'
 import Layout from './Layout.jsx'
 import Login from './Login.jsx'
+import Decks from './Decks.jsx'
 
 function Index() {
   return (
@@ -15,6 +16,7 @@ function Index() {
             <Route path="/abnormalities" element={<Abnormalities />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/decks" element={<Decks />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
