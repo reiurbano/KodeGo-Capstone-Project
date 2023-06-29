@@ -1,9 +1,10 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Nav() {
     return (
-        <div>
-            <h1>Navbar</h1>
+        <div className="d-flex justify-content-between">
+            <button className="btn btn-dark">⇆</button>
+            <Link className="btn btn-dark" to="/Login">Login</Link>
         </div>
     )
 }
