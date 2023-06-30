@@ -2,13 +2,75 @@
 @import 'bootstrap/dist/css/bootstrap.css';
 
 * {
-  font-family: 'Nanum Myeongjo', 'Noto Serif', serif;
+  margin: 0rem !important;
+  padding: 0rem !important;
 }
 
-nav {
+body {
+  font-family: 'Nanum Myeongjo', 'Noto Serif', serif;
+  background-color: #292929;
+  color: #FFFFFF;
+}
+
+#sidebar, #topbar {
+  background-color: #1E1E1E;
+}
+
+#sidebar {
   width: 20rem;
 }
 
-.nav-logo {
-  max-height: 3rem;
+#topbar {
+  height: 2.5rem;
 }
+
+.nav-logo {
+  max-height: 4rem;
+}
+
+.nav-link {
+  font-size: 1.25rem;
+  height: 3rem;
+}
+
+#logo {
+  height: 4rem;
+}
+
+.top-button {
+  color: #FFFFFF;
+}
+
+.nav-item:nth-child(2) {
+  position: sticky;
+  top: 4rem;
+}
+
+.nav-item:nth-child(3) {
+  position: sticky;
+  top: 7rem;
+}
+
+.nav-item:nth-child(4) {
+  position: sticky;
+  top: 10rem;
+}
+
+.nav-item:nth-child(5) {
+  position: sticky;
+  height: 30rem;
+  top: 13rem;
+}
+
+.nav-item:nth-child(6) {
+  height: 100rem;
+}
+
+#bg-text {
+  background-image: url("./bg_text.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+

@@ -4,9 +4,9 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 function Nav() {
     return (
-        <div className="d-flex justify-content-between">
-            <button className="btn btn-dark">⇆</button>
-            <Link className="btn btn-dark" to="/login">
+        <div id="topbar" className="d-flex justify-content-between sticky-top">
+            <button className="btn top-button px-3">⇆</button>
+            <Link className="btn top-button my-auto px-3" to="/login">
                 <FontAwesomeIcon icon={faUser} /> Login
             </Link>
         </div>
