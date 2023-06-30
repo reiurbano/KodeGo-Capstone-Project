@@ -12,6 +12,10 @@ body {
   color: #FFFFFF;
 }
 
+#login, #register {
+  background-color: #393939;
+}
+
 #sidebar, #topbar {
   background-color: #1E1E1E;
 }

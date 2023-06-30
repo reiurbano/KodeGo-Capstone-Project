@@ -9,7 +9,8 @@ function Sidebar() {
         <nav id="sidebar">
             <ul className="nav flex-column">
                 <li className="nav-item sticky-top">
-                    <Link to="/" id="logo" className="nav-link row">
+                    <Link to="/" id="logo" className={`nav-link row 
+                    ${(location.pathname == "/") ? "fw-bold active" : ""}`}>
                         <img className="col-2 nav-logo" src="/tail.png" />
                         <span className="col sidebar">
                             <img className="nav-logo" src="/logo.png" />
@@ -17,7 +18,8 @@ function Sidebar() {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/" className="nav-link row">
+                    <Link to="/" className={`nav-link row 
+                    ${(location.pathname == "/") ? "fw-bold active" : ""}`}>
                         <FontAwesomeIcon className="col-2" icon={faScroll} />
                         <span className="col sidebar">
                             Combat Cards
@@ -25,7 +27,8 @@ function Sidebar() {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/abnormalities" className="nav-link row">
+                    <Link to="/abnormalities" className={`nav-link row 
+                    ${(location.pathname == "/abnormalities") ? "fw-bold active" : ""}`}>
                         <FontAwesomeIcon className="col-2" icon={faGhost} />
                         <span className="col sidebar">
                             Abnormalities
@@ -33,7 +36,8 @@ function Sidebar() {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/decks" className="nav-link row">
+                    <Link to="/decks" className={`nav-link row 
+                    ${(location.pathname == "/decks") ? "fw-bold active" : ""}`}>
                         <FontAwesomeIcon className="col-2" icon={faBookOpen} />
                         <span className="col sidebar">
                             Decks
