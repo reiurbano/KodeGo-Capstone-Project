@@ -10,9 +10,12 @@ function Layout() {
             </header>
             <div className="d-flex justify-content-between">
                 <Sidebar />
-                <div className="flex-fill">
-                    <Nav />
-                    <Outlet />
+                <div className="flex-fill" id="right">
+                    <div id="overlay"></div>
+                    <main>
+                        <Nav />
+                        <Outlet />
+                    </main>
                 </div>
             </div>
         </div>

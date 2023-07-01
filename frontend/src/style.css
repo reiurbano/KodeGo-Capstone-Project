@@ -90,4 +90,26 @@ body {
   height: 100%;
 }
 
+#right {
+  position: relative;
+}
 
+#right {
+  background-image: url("/TitleBackground.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+}
+
+#overlay {
+  background-color: #393939ee;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+main {
+  position: relative;
+}
