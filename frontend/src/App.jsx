@@ -1,8 +1,10 @@
 import Index from './pages/Index.jsx'
 
 function App() {
+  const endpoint = "http://localhost/library-of-ruina/backend/";
+
   return (
-    <Index />
+    <Index endpoint={endpoint} />
   )
 }
 

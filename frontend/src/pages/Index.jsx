@@ -7,15 +7,16 @@ import Layout from './Layout.jsx'
 import Login from './Login.jsx'
 import Decks from './Decks.jsx'
 
-function Index() {
+function Index({ endpoint }) {
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}> 
             <Route index element={<CombatCards />} />
             <Route path="/abnormalities" element={<Abnormalities />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register endpoint={endpoint} />} />
+            <Route path="/login" element={<Login endpoint={endpoint} />} />
             <Route path="/decks" element={<Decks />} />
         </Route>
         <Route path="*" element={<NotFound />} />
