@@ -6,7 +6,7 @@ function Layout() {
     return (
         <div>
             <header className="container-fluid bg-black">
-                <img className="img-fluid" src="./head.png" />
+                <img className="img-fluid" src="/head.png" />
             </header>
             <div className="d-flex justify-content-between">
                 <Sidebar />

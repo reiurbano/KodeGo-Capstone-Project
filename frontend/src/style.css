@@ -12,6 +12,14 @@ body {
   color: #FFFFFF;
 }
 
+.nav-link {
+  color: #FFFFFF;
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: #B1B1B1;
+}
+
 #login, #register {
   background-color: #393939;
 }
@@ -21,7 +29,8 @@ body {
 }
 
 #sidebar {
-  width: 20rem;
+  min-width: 20rem;
+  max-width: 20rem;
 }
 
 #topbar {
@@ -70,8 +79,12 @@ body {
   height: 100rem;
 }
 
+.nav-item:nth-child(2), .nav-item:nth-child(3), .nav-item:nth-child(4) {
+  background-color: #393939;
+}
+
 #bg-text {
-  background-image: url("./bg_text.png");
+  background-image: url("/bg_text.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
