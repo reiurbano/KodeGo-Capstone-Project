@@ -1,7 +1,12 @@
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { EndpointContext } from '../Contexts'
+import { useState, useContext } from 'react'
 
-function Register({ endpoint }) {
+function Register() {
+    const endpoint = useContext(EndpointContext);
+
+    const navigate = useNavigate();
+
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -28,7 +33,7 @@ function Register({ endpoint }) {
 
             if (data.success) {
                 alert(data.message);
-                window.location.href="/";
+                navigate('/login');
             } else {
                 alert(data.message);
             }

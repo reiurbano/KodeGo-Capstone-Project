@@ -1,7 +1,13 @@
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { EndpointContext, SessionContext } from '../Contexts'
+import { useState, useContext } from 'react'
 
-function Login({ endpoint }) {
+function Login() {
+    const endpoint = useContext(EndpointContext);
+    const session = useContext(SessionContext);
+
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -23,8 +29,8 @@ function Login({ endpoint }) {
         const data = await response.json();
 
         if (data.success) {
-            alert(data.message);
-            window.location.href="/";
+            session.updateSession(data.success);
+            navigate('/home');
         } else {
             alert(data.message);
         }
