@@ -1,6 +1,28 @@
-import GetCards from '../GetCards.jsx'
+import { ListContext, EndpointContext } from '../Contexts.js'
+import { useContext, useEffect } from 'react'
+import ListCards from '../ListCards.jsx'
 
 function CombatCards() {
+    const endpoint = useContext(EndpointContext);
+    const list = useContext(ListContext);
+
+    const getCards = async () => {
+        const response = await fetch(`${endpoint}getcards.php`, {
+            credentials: 'include',
+            method: 'GET'
+        })
+
+        const data = await response.json();
+
+        if (list.list != data) {
+            list.updateList(data);
+        }
+    }
+
+    useEffect(() => {
+        getCards();
+    }, [list.list])
+
     return (
         <div>
             <div className="mx-5 mt-5 py-3 border rounded" id="search">
@@ -19,7 +41,7 @@ function CombatCards() {
                     </div>
                 </form>
             </div>
-            <GetCards />
+            <ListCards list={list.list} />
         </div>
     )
 }
