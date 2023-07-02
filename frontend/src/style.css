@@ -2,12 +2,15 @@
 @import 'bootstrap/dist/css/bootstrap.css';
 
 /* 
+Card Rarity Colors
+
 B0F794 Common
 8BBDED Uncommon
 CB76FA Limited
 F8F178 Unique 
 */
 
+/* UI Styling */
 * {
   margin: 0rem !important;
   padding: 0rem !important;
@@ -113,4 +116,87 @@ body {
 
 main {
   position: relative;
+}
+
+/* Combat Cards */
+.cp-card-left,
+.cp-card-right {
+    text-align: center;
+    display: inline-grid;
+    grid-template-columns: 15rem;
+    gap: 0;
+}
+
+.cp-card-left {
+    position: relative;
+    grid-template-rows: 6.5rem 8.75rem 4.75rem;
+}
+
+.cp-link {
+    grid-area: 1 / 1 / span 3 / span 1;
+}
+
+.cp-title {
+    grid-area: 1 / 1 / span 1 / span 1;
+    align-self: end;
+    font-style: italic;
+    margin-bottom: 0.85rem !important;
+    transform: rotate(-10deg);
+    color: black;
+    font-family: 'Noto Serif', serif;
+}
+
+.cp-overflow-img {
+    grid-area: 2 / 1 / span 1 / span 1;
+    overflow: hidden;
+    margin-left: 0.25rem !important;
+    margin-right: auto !important;
+    max-width: 13.25rem;
+    transform: rotate(-10deg) skewx(-10deg);
+}
+
+.cp-img {
+  position: relative;
+  width: 15rem;
+  bottom: 1rem;
+  transform: rotate(10deg) skewx(10deg);
+}
+
+.cp-overflow-text {
+    grid-area: 3 / 1 / span 1 / span 1;
+    overflow: hidden;
+    position: relative;
+    margin-left: 0.25rem !important;
+    margin-right: auto !important;
+    max-width: 13.5rem !important;
+    max-height: 8rem !important;
+    bottom: 1rem;
+}
+
+.cp-text-left {
+    font-size: 0.75rem;
+    margin-top: 1.5rem !important;
+    width: 95%;
+    transform: rotate(-10deg);
+}
+
+.cp-card-right {
+    grid-template-rows: 1rem 19rem;
+}
+
+.cp-frame {
+    grid-area: 1 / 1 / span 2 / span 1;
+}
+
+.cp-text-right {
+    grid-area: 2 / 1 / span 1 / span 1;
+    align-self: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 0.75rem;
+    width: 80%;
+}
+
+.cp-link:hover {
+    cursor: pointer;
 }
