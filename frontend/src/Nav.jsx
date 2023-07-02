@@ -16,11 +16,9 @@ function Nav() {
 
         const data = await response.json();
 
-        // if (data.success) {
-        //     if (data.valid != session.session && data.valid != true) {
-        //         session.updateSession(data.valid)
-        //     }
-        // }
+        if (data.success && data.valid != session.session && data.valid != true) {
+            session.updateSession(data.valid)
+        }
     }
 
     useEffect(() => {
@@ -30,8 +28,8 @@ function Nav() {
     return (
         <div id="topbar" className="d-flex justify-content-between sticky-top">
             <button className="btn top-button px-3">⇆</button>
-            <Link className={`btn top-button my-auto px-3 ${(session.session) ? "d-none" : ""}`} to="/login">
-                <FontAwesomeIcon icon={faUser} /> Login
+            <Link className="btn top-button my-auto px-3" to={`${(session.session) ? '/home' : '/login'}`}>
+                <FontAwesomeIcon icon={faUser} /> {(session.session) ? "Home" : "Login"}
             </Link>
         </div>
     )
