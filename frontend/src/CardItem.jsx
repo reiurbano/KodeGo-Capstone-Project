@@ -1,5 +1,3 @@
-import { useEffect } from "react"
-
 function CardItem({ chapter, cost, dice, effect, id, range, rarity, title, source }) {
     const temp = rarity.split(" ")[1];
     const scarcity = temp.slice(1, (temp.length - 1));

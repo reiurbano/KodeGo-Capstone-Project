@@ -1,24 +1,13 @@
-import { ListContext, EndpointContext } from '../Contexts.js'
 import { useContext, useEffect } from 'react'
+import { ListContext } from '../Contexts.js'
 import ListCards from '../ListCards.jsx'
+import GetCards from '../GetCards.js'
 
 function CombatCards() {
-    const endpoint = useContext(EndpointContext);
-    const list = useContext(ListContext);
-
-    const getCards = async () => {
-        const response = await fetch(`${endpoint}getcards.php`, {
-            credentials: 'include',
-            method: 'GET'
-        })
-
-        const data = await response.json();
-
-        list.updateList(data);
-    }
+    const list = useContext(ListContext)
 
     useEffect(() => {
-        getCards();
+        GetCards(list);
     }, [])
 
     return (

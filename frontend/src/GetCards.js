@@ -1,22 +1,14 @@
-// import { EndpointContext, ListContext } from './Contexts.js';
-// import { useContext } from 'react';
+import { endpoint } from './Contexts';
 
-// function GetCards() {
-//     const endpoint = useContext(EndpointContext);
-//     const list = useContext(ListContext);
+const GetCards = async (list) => {
+    const response = await fetch(`${endpoint}getcards.php`, {
+        credentials: 'include',
+        method: 'GET'
+    })
 
-//     const getCards = async () => {
-//         const response = await fetch(`${endpoint}getcards.php`, {
-//             credentials: 'include',
-//             method: 'GET'
-//         })
+    const data = await response.json();
 
-//         const data = await response.json();
+    list.updateList(data);
+}
 
-//         list.updateList(data);
-//     }
-
-//     return getCards;
-// }
-
-// export default GetCards
+export default GetCards

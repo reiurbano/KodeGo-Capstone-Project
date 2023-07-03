@@ -1,9 +1,8 @@
 import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { EndpointContext, SessionContext } from '../Contexts'
+import { useNavigate, Link, Outlet } from 'react-router-dom'
+import { endpoint, SessionContext } from '../Contexts'
 
 function Home() {
-    const endpoint = useContext(EndpointContext);
     const session = useContext(SessionContext);
 
     const navigate = useNavigate();
@@ -24,8 +23,26 @@ function Home() {
 
     return (
         <div>
-            <h1>Homepage</h1>
-            <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+            <div className="mx-5 mt-5 py-3 border rounded" id="search">
+                <div className="d-flex mx-5 my-2">
+                    <h1 className="flex-fill">Homepage</h1>
+                    <button className="btn btn-danger px-2 py-1 align-self-center" onClick={handleLogout}>Logout</button>
+                </div>
+                <hr />
+            </div>
+            <div className="mx-5 mt-5 py-3">
+                <ul className="nav nav-underline">
+                    <li className="">
+                        <Link className="nav-link" to="/home/yourdecks">Saved Decks</Link>
+                    </li>
+                    <li className="">
+                        <Link className="nav-link" to="/home/deckbuilder">Make Your Own Deck</Link>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <Outlet />
+            </div>
         </div>
     )
 }

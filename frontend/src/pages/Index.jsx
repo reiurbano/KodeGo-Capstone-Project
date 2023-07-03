@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Abnormalities from './Abnormalities.jsx'
 import CombatCards from './CombatCards.jsx'
+import DeckBuilder from './DeckBuilder.jsx'
+import SavedDecks from './SavedDecks.jsx'
 import NotFound from './NotFound.jsx'
 import Register from './Register.jsx'
 import Layout from './Layout.jsx'
@@ -12,13 +14,16 @@ function Index() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}> 
-            <Route index element={<CombatCards />} />
-            <Route path="/abnormalities" element={<Abnormalities />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/decks" element={<Decks />} />
-            <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<CombatCards />} />
+          <Route path="/abnormalities" element={<Abnormalities />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/decks" element={<Decks />} />
+          <Route path="/home" element={<Home />}>
+            <Route path="/home/yourdecks" element={<SavedDecks />} />
+            <Route path="/home/deckbuilder" element={<DeckBuilder />} />
+          </Route>
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
