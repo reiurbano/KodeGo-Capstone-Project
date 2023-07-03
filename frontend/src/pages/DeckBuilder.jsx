@@ -61,6 +61,7 @@ function DeckBuilder() {
             const newData = await newResponse.json();
             
             if (newData.success) {
+                deck.updateDeck([]);
                 navigate('/home/yourdecks');
             } else {
                 alert(newData.message);

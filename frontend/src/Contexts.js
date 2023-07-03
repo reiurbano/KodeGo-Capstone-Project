@@ -6,3 +6,4 @@ export const SessionContext = createContext(null);
 export const EndpointContext = createContext(null);
 export const ListContext = createContext(null);
 export const DeckContext = createContext(null);
+export const BuildContext = createContext(null);
