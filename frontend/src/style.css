@@ -87,9 +87,9 @@ body {
   top: 13.10rem;
 }
 
-/* .nav-item:nth-child(6) {
-  height: 100rem;
-} */
+.nav-item:nth-child(6) {
+  height: 150vh;
+}
 
 #bg-text {
   background-image: url("/bg_text.png");
@@ -203,4 +203,14 @@ main {
 
 .cp-link:hover {
     cursor: pointer;
+}
+
+.cp-card-left,
+.cp-card-right {
+    transition: all 1.5s ease 0s;
+}
+
+.cp-card-left:hover,
+.cp-card-right:hover {
+    transform: rotate(-2.5deg)
 }

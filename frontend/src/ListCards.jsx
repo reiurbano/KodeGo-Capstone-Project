@@ -20,6 +20,7 @@ function ListCards(list) {
                     cost={item.cost}
                     dice={item.dice}
                     effect={item.effect}
+                    key={item.id}
                     id={item.id}
                     range={item.range}
                     rarity={item.rarity}
@@ -33,7 +34,7 @@ function ListCards(list) {
     }
 
     return (
-        <div>
+        <div className="d-flex flex-wrap justify-content-evenly">
             {mapList()}
         </div>
     )
