@@ -11,17 +11,17 @@ function CardItem({ chapter, cost, dice, effect, id, range, rarity, title, sourc
 
     const deck = useContext(DeckContext);
 
-    const addDeck = (card) => {
-        deck.updateDeck((prev) => [
-            ...prev,
-            card
-        ])
-    }
+    // const addDeck = (card) => {
+    //     deck.updateDeck((prev) => [
+    //         ...prev,
+    //         card
+    //     ])
+    // }
 
     return (
         <div className="d-flex flex-wrap justify-content-center my-3">
             <div className="cp-card-left">
-                <a className="cp-link stretched-link" 
+                <a className="cp-link stretched-link" onClick={ () => { deck.updateDeck((prev) => [...prev,id]) } }
                     data-bs-toggle="collapse" data-bs-target={`#${id}`} aria-expanded="false">
                     <img className="img-fluid" src={`/frames/${scarcity}_${cost}_${range}_left.png`} />
                 </a>
