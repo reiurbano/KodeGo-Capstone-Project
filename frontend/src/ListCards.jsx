@@ -13,9 +13,6 @@ function ListCards(list) {
 
     useEffect(() => {
         updateTest(list);
-        if (test.list != undefined && test.list.length != 0) {
-            console.log(test.list);
-        }
     }, [list])
 
     const mapList = () => {
