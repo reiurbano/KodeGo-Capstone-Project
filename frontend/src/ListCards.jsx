@@ -2,9 +2,9 @@ import { useEffect } from "react"
 import CardItem from "./CardItem"
 
 function ListCards(list) {
-    useEffect(() => {
-        console.log(list);
-    }, [])
+    // useEffect(() => {
+    //     console.log(list);
+    // }, [])
 
     // const cardList = list.map(item => {
     //     <CardItem
