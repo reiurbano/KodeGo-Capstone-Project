@@ -16,22 +16,21 @@ function ListCards(list) {
 
             const cardList = test.list.map((item) => {
                 return <CardItem
-                            chapter={item.chapter}
-                            cost={item.cost}
-                            dice={item.dice}
-                            effect={item.effect}
-                            id={item.id}
-                            range={item.range}
-                            rarity={item.rarity}
-                            title={item.title}
-                        />;
+                    chapter={item.chapter}
+                    cost={item.cost}
+                    dice={item.dice}
+                    effect={item.effect}
+                    id={item.id}
+                    range={item.range}
+                    rarity={item.rarity}
+                    title={item.title}
+                    source={item.source}
+                />;
             });
 
             return cardList;
         }
     }
-
-    console.log(mapList());
 
     return (
         <div>
