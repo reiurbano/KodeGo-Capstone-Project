@@ -91,6 +91,15 @@ body {
   height: 150vh;
 }
 
+.maxHeight {
+  max-height:100vh;
+  overflow-y: scroll;
+}
+
+#card-list {
+  scrollbar-width: thin;
+}
+
 #bg-text {
   background-image: url("/bg_text.png");
   background-repeat: no-repeat;

@@ -1,27 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
-import { endpoint, SessionContext } from './Contexts'
 import { useContext, useEffect } from 'react'
+import { SessionContext } from './Contexts'
 import { Link } from 'react-router-dom'
+import CheckSess from './CheckSess'
 
 function Nav() {
     const session = useContext(SessionContext);
 
-    const checkSess = async () => {
-        const response = await fetch(`${endpoint}login.php`, {
-            credentials: 'include',
-            method: 'GET'
-        })
-
-        const data = await response.json();
-
-        if (data.success && data.valid != session.session && data.valid != true) {
-            session.updateSession(data.valid)
-        }
-    }
-
     useEffect(() => {
-        checkSess();
+        CheckSess(session);
     }, [session.session])
 
     return (

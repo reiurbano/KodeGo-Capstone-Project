@@ -1,4 +1,7 @@
-function CardItem({ chapter, cost, dice, effect, id, range, rarity, title, source }) {
+import { useContext } from "react";
+import { DeckContext } from "./Contexts";
+
+function CardItem({ chapter, cost, dice, effect, id, range, rarity, title, source, sess }) {
     const temp = rarity.split(" ")[1];
     const scarcity = temp.slice(1, (temp.length - 1));
 
@@ -6,11 +9,20 @@ function CardItem({ chapter, cost, dice, effect, id, range, rarity, title, sourc
     const rank = encodeURIComponent(chapter);
     const enemy = encodeURIComponent(source);
 
+    const deck = useContext(DeckContext);
+
+    const addDeck = (card) => {
+        deck.updateDeck((prev) => [
+            ...prev,
+            card
+        ])
+    }
+
     return (
         <div className="d-flex flex-wrap justify-content-center my-3">
             <div className="cp-card-left">
-                <a className="cp-link stretched-link" data-bs-toggle="collapse"
-                    data-bs-target={`#${id}`} aria-expanded="false">
+                <a className="cp-link stretched-link" 
+                    data-bs-toggle="collapse" data-bs-target={`#${id}`} aria-expanded="false">
                     <img className="img-fluid" src={`/frames/${scarcity}_${cost}_${range}_left.png`} />
                 </a>
                 <h6 className="cp-title">{title}</h6>

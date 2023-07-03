@@ -29,16 +29,16 @@ function Home() {
                     <button className="btn btn-danger px-2 py-1 align-self-center" onClick={handleLogout}>Logout</button>
                 </div>
                 <hr />
-            </div>
-            <div className="mx-5 mt-5 py-3">
-                <ul className="nav nav-underline">
-                    <li className="">
-                        <Link className="nav-link" to="/home/yourdecks">Saved Decks</Link>
-                    </li>
-                    <li className="">
-                        <Link className="nav-link" to="/home/deckbuilder">Make Your Own Deck</Link>
-                    </li>
-                </ul>
+                <div className="mx-5 mt-5 py-3">
+                    <ul className="nav nav-underline">
+                        <li className="">
+                            <Link className="nav-link" to="/home/yourdecks">Saved Decks</Link>
+                        </li>
+                        <li className="">
+                            <Link className="nav-link" to="/home/deckbuilder">Make Your Own Deck</Link>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div>
                 <Outlet />

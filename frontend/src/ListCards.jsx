@@ -1,8 +1,15 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
+import { SessionContext } from "./Contexts"
+import CheckSess from "./CheckSess"
 import CardItem from "./CardItem"
 
 function ListCards(list) {
+    const session = useContext(SessionContext);
     const [test, updateTest] = useState([]);
+
+    useEffect(() => {
+        CheckSess(session);
+    }, [session.session])
 
     useEffect(() => {
         updateTest(list);
@@ -13,7 +20,6 @@ function ListCards(list) {
 
     const mapList = () => {
         if (test.list != undefined && test.list.length != 0) {
-
             const cardList = test.list.map((item) => {
                 return <CardItem
                     chapter={item.chapter}
@@ -26,6 +32,7 @@ function ListCards(list) {
                     rarity={item.rarity}
                     title={item.title}
                     source={item.source}
+                    sess={session.session}
                 />;
             });
 
@@ -34,7 +41,7 @@ function ListCards(list) {
     }
 
     return (
-        <div className="d-flex flex-wrap justify-content-evenly">
+        <div className={`d-flex flex-wrap justify-content-evenly mx-5 mt-3 ${(session.session) ? 'maxHeight' : ''}`} id="card-list">
             {mapList()}
         </div>
     )
