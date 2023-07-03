@@ -11,4 +11,15 @@ const GetCards = async (list) => {
     list.updateList(data);
 }
 
+// const GetDeck = async (deck) => {
+//     const response = await fetch(`${endpoint}getcards.php?id=${}`, {
+//         credentials: 'include',
+//         method: 'GET'
+//     })
+
+//     const data = await response.json();
+
+//     deck.updateDeck(data);
+// }
+
 export default GetCards

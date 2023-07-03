@@ -1,4 +1,13 @@
+import { useContext, useEffect } from "react"
+import { DeckContext } from "./Contexts"
+
 function DeckView() {
+    const deck = useContext(DeckContext);
+
+    useEffect(() => {
+        console.log(deck.deck);
+    }, [deck.deck])
+
     return (
         <div className="accordion accordion-flush mx-2" id="deckAccordion">
             <div className="accordion-item">
