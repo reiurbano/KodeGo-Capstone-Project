@@ -1,8 +1,9 @@
 function CardItem({ chapter, cost, dice, effect, id, range, rarity, title }) {
+    
+
     return (
         <div>
-            <p className="p-5 m-5">Hello World</p>
-            {/* <div id={`${id}`} className="d-flex flex-wrap justify-content-center">
+            <div id={`${id}`} className="d-flex flex-wrap justify-content-center">
                 <div className="cp-card-left">
                     <a className="cp-link stretched-link" data-bs-toggle="collapse"
                         data-bs-target={`${title}-${id}`} aria-expanded="false">
@@ -24,7 +25,7 @@ function CardItem({ chapter, cost, dice, effect, id, range, rarity, title }) {
                         {effect}
                     </p>
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 }

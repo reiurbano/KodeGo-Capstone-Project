@@ -5,7 +5,6 @@ import ListCards from '../ListCards.jsx'
 function CombatCards() {
     const endpoint = useContext(EndpointContext);
     const list = useContext(ListContext);
-    const temp = list.list;
 
     const getCards = async () => {
         const response = await fetch(`${endpoint}getcards.php`, {
@@ -15,15 +14,12 @@ function CombatCards() {
 
         const data = await response.json();
 
-        if (list.list != data || temp != list.list || temp != data) {
-            list.updateList(data);
-        }
+        list.updateList(data);
     }
 
     useEffect(() => {
         getCards();
-        console.log(temp);
-    }, [list.list])
+    }, [])
 
     return (
         <div>
@@ -43,7 +39,7 @@ function CombatCards() {
                     </div>
                 </form>
             </div>
-            <ListCards list={temp} />
+            <ListCards list={list.list} />
         </div>
     )
 }
