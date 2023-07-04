@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import CardItem from './CardItem'
 import { endpoint } from './Contexts';
 
 function Builds({ rank, name, desc, floor, deck, id }) {
+    const [update, setUpdate] = useState(false);
+
     const mapDeck = () => {
         if (deck != undefined && deck.length != 0) {
             const deckList = deck.map((item, index) => {
@@ -33,7 +36,9 @@ function Builds({ rank, name, desc, floor, deck, id }) {
 
         if (data.success) {
             alert(data.message);
-            // navigate('/home');
+            // setUpdate((current) => {
+            //     return !current;
+            // })
         } else {
             alert(data.message);
         }
