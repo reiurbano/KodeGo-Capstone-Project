@@ -100,6 +100,12 @@ body {
   scrollbar-width: thin;
 }
 
+.deckMap {
+  scrollbar-width: thin;
+  max-height: 50vh;
+  overflow-y: scroll;
+}
+
 #bg-text {
   background-image: url("/bg_text.png");
   background-repeat: no-repeat;
@@ -109,6 +115,10 @@ body {
 
 #right {
   position: relative;
+}
+
+.deck-left {
+  border-right: #FFFFFF solid 0.05rem;
 }
 
 #right {

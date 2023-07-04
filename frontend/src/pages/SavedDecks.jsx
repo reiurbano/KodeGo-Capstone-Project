@@ -32,7 +32,11 @@ function SavedDecks() {
 
     useEffect(() => {
         GetDecks();
-    }, [session.session])
+    }, [])
+
+    useEffect(() => {
+        console.log(builds.builds);
+    }, [builds.builds])
 
     return (
         <div>
