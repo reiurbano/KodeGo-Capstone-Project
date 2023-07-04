@@ -1,4 +1,5 @@
 import CardItem from './CardItem'
+import { endpoint } from './Contexts';
 
 function Builds({ rank, name, desc, floor, deck, id }) {
     const mapDeck = () => {
@@ -22,6 +23,24 @@ function Builds({ rank, name, desc, floor, deck, id }) {
         }
     }
 
+    const handleDelete = async (x, i) => {
+        const response = await fetch(`${endpoint}deletedeck.php?id=${i}`, {
+            credentials: 'include',
+            method: 'POST'
+        })
+        
+        const data = await response.json();
+
+        if (data.success) {
+            alert(data.message);
+            // navigate('/home');
+        } else {
+            alert(data.message);
+        }
+    }
+
+    const newID = id;
+
     return (
         <div className="row mx-5 mt-5 py-3 border rounded">
             <div className="col-md-4 deck-left text-center">
@@ -40,7 +59,7 @@ function Builds({ rank, name, desc, floor, deck, id }) {
                 {mapDeck()}
             </div>
             <div className="col-md-1 ms-auto">
-                <button className="btn btn-danger px-3 py-2" onClick={}>X</button>
+                <button className="btn btn-danger px-3 py-2" onClick={(evt) => {handleDelete(evt, newID)}}>X</button>
             </div>
         </div>
     )
