@@ -77,7 +77,7 @@ function DeckBuilder() {
                 <div className="mt-5 py-3 border rounded">
                     <form onSubmit={handleSubmit}>
                         <div className="d-flex">
-                            <input className="mb-1 mx-3 p-1 flex-fill" ref={deckNameRef} type="text" placeholder="Your Deck's Name" required />
+                            <input className="mb-1 mx-3 p-1 flex-fill form-control" ref={deckNameRef} type="text" placeholder="Your Deck's Name" required />
                             <button className="btn btn-light px-2 py-1 mx-5 align-self-center" type="submit">Submit</button>
                         </div>
                         <div className="mx-2">
