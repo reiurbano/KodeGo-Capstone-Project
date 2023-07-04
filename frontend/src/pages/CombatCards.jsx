@@ -12,7 +12,7 @@ function CombatCards() {
 
     return (
         <div>
-            <div className="mx-5 mt-5 py-3 border rounded" id="search">
+            <div className="mx-5 mt-5 py-3 border rounded bg-darkgrey" id="search">
                 <h1 className="mx-5 my-2">Combat Cards</h1><hr />
                 <div className="my-2 mx-2">
                     <div className="input-group">

@@ -74,10 +74,10 @@ function DeckBuilder() {
     return (
         <div className="row justify-content-center">
             <div className="col-md-4">
-                <div className="mt-5 py-3 border rounded">
+                <div className="mt-5 py-3 border rounded bg-darkgrey">
                     <form onSubmit={handleSubmit}>
                         <div className="d-flex">
-                            <input className="mb-1 mx-3 p-1 flex-fill form-control" ref={deckNameRef} type="text" placeholder="Your Deck's Name" required />
+                            <input className="mb-1 mx-2 p-1 flex-fill form-control" ref={deckNameRef} type="text" placeholder="Your Deck's Name" required />
                             <button className="btn btn-light px-2 py-1 mx-5 align-self-center" type="submit">Submit</button>
                         </div>
                         <div className="mx-2">
@@ -112,7 +112,7 @@ function DeckBuilder() {
                 </div>
             </div>
             <div className="col-md-7">
-                <div className="mx-5 mt-5 py-3 border rounded">
+                <div className="mx-5 mt-5 py-3 border rounded bg-darkgrey">
                     <h3 className="mb-2 mx-3 px-5">Cards</h3><hr className="mb-2" />
                     <div className="input-group">
                         <input className="form-control p-1 ms-5" placeholder="Cardname" />

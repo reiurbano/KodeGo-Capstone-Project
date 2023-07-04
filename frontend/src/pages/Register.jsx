@@ -43,7 +43,7 @@ function Register() {
     }
 
     return (
-        <div className="mx-5 mt-5 py-3 border rounded" id="register">
+        <div className="mx-5 mt-5 py-3 border rounded bg-darkgrey" id="register">
             <h1 className="mx-5 my-2">Register</h1><hr />
             <form className="mt-3 mx-5" id="registrationForm" onSubmit={handleRegister}>
                 <div className="row mt-2">

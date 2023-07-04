@@ -40,7 +40,7 @@ function SavedDecks() {
 
     return (
         <div>
-            <div className="mx-5 mt-5 py-3 border rounded">
+            <div className="mx-5 mt-5 py-3 border rounded bg-darkgrey">
                 <h1 className="mx-5 my-2">Builds</h1><hr />
                 <div className="my-2 mx-2">
                     <div className="input-group">

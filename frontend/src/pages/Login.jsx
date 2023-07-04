@@ -37,7 +37,7 @@ function Login() {
     }
 
     return (
-        <div className="mx-5 mt-5 py-3 border rounded" id="login">
+        <div className="mx-5 mt-5 py-3 border rounded bg-darkgrey" id="login">
             <h1 className="mx-5 my-2">Login</h1><hr />
             <form className="mt-3 mx-5" id="loginForm" onSubmit={handleLogin}>
                 <div className="row mt-2">

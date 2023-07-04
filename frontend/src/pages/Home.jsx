@@ -23,7 +23,7 @@ function Home() {
 
     return (
         <div>
-            <div className="mx-5 mt-5 py-3 border rounded" id="search">
+            <div className="mx-5 mt-5 py-3 border rounded bg-darkgrey" id="search">
                 <div className="d-flex mx-5 my-2">
                     <h1 className="flex-fill">Homepage</h1>
                     <button className="btn btn-danger px-2 py-1 align-self-center" onClick={handleLogout}>Logout</button>

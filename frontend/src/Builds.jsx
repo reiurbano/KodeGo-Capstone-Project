@@ -77,7 +77,7 @@ function Builds({ rank, name, desc, floor, deck, id }) {
     const newID = id;
 
     return (
-        <div className="row mx-5 mt-5 py-3 border rounded">
+        <div className="row mx-5 mt-5 py-3 border rounded bg-darkgrey">
             <div className="col-md-4 deck-left text-center">
                 <h3 className="mb-2 mx-3 px-5">{name}</h3><hr className="mb-2" />
                 <div className="mx-5 py-3">
