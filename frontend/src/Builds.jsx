@@ -1,9 +1,35 @@
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import CardItem from './CardItem'
-import { endpoint } from './Contexts';
+import { endpoint, BuildContext, SessionContext } from './Contexts';
 
 function Builds({ rank, name, desc, floor, deck, id }) {
     const [update, setUpdate] = useState(false);
+    const builds = useContext(BuildContext);
+    const session = useContext(SessionContext);
+
+    const GetDecks = async () => {
+        const response = await fetch(`${endpoint}login.php`, {
+            credentials: 'include',
+            method: 'GET'
+        })
+
+        const data = await response.json();
+
+        if (data.success && data.valid != session.session && data.valid != true) {
+            session.updateSession(data.valid)
+        } else if (data.success && data.valid == session.session && data.valid == true) {
+            const user_id = data.user_id;
+
+            const newResponse = await fetch(`${endpoint}getbuilds.php?id=${user_id}`, {
+                credentials: 'include',
+                method: 'GET'
+            })
+
+            const newData = await newResponse.json();
+
+            builds.updateBuilds(newData);
+        }
+    }
 
     const mapDeck = () => {
         if (deck != undefined && deck.length != 0) {
@@ -36,13 +62,17 @@ function Builds({ rank, name, desc, floor, deck, id }) {
 
         if (data.success) {
             alert(data.message);
-            // setUpdate((current) => {
-            //     return !current;
-            // })
+            setUpdate((current) => {
+                return !current;
+            })
         } else {
             alert(data.message);
         }
     }
+
+    useEffect(() => {
+        GetDecks();
+    }, [update])
 
     const newID = id;
 
